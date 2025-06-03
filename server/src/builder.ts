@@ -1,5 +1,5 @@
 import SchemaBuilder from "@pothos/core";
-import type PrismaTypes from "@pothos/plugin-prisma/generated";
+import type PrismaTypes from "../src/generated/pothos-types";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import { Context, prisma } from "./context";
 
@@ -12,3 +12,5 @@ export const builder = new SchemaBuilder<{
     client: prisma,
   },
 });
+
+builder.queryType({});
