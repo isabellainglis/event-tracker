@@ -25,4 +25,10 @@ export const EventRepository = {
       data,
     });
   },
+
+  delete: (id: number) => {
+    return prisma.event.delete({
+      where: { id },
+    });
+  },
 };

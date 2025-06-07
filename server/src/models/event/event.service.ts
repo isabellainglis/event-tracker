@@ -34,4 +34,12 @@ export const EventService = {
 
     return EventRepository.create({ name: name.trim(), date, location });
   },
+
+  deleteEvent: async (id: number) => {
+    const event = await EventService.getEventById(id);
+
+    await EventRepository.delete(id);
+
+    return event;
+  },
 };

@@ -40,3 +40,17 @@ builder.mutationField("addEvent", (t) =>
     },
   })
 );
+
+builder.mutationField("deleteEvent", (t) =>
+  t.prismaField({
+    type: "Event",
+    args: {
+      id: t.arg.id({ required: true }),
+    },
+    resolve: async (_query, _root, args, ctx) => {
+      const id = Number(args.id);
+
+      return EventService.deleteEvent(id);
+    },
+  })
+);
