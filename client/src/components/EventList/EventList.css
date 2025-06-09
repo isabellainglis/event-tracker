@@ -1,0 +1,15 @@
+.event-list__events {
+  padding: 0;
+}
+.event-list__single-event {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 1%;
+  border: black solid 1px;
+  margin: 0.5rem;
+}
+
+.event-list__column {
+  width: 30%;
+}

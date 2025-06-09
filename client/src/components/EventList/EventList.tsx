@@ -1,7 +1,8 @@
+import ListHeader from "../ListHeader/ListHeader";
 import "./EventList.css";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import { useQuery, gql } from "@apollo/client";
 
-const GET_USERS = gql`
+const GET_EVENTS = gql`
   query {
     events {
       id
@@ -20,21 +21,25 @@ interface Event {
 }
 
 export default function EventList() {
-  const { data, error, loading } = useQuery(GET_USERS);
+  const { data, error, loading } = useQuery(GET_EVENTS);
 
   if (loading) return <p>Data loading...</p>;
 
   if (error) return <p>Error: {error.message}</p>;
 
-  console.log(data);
-
   return (
     <section className="event-list">
       <h1>Event List</h1>
-      <ul>
+      <ListHeader />
+      <ul className="event-list__events">
         {data.events.map((event: Event) => {
-          console.log(event);
-          return <li>{event.name}</li>;
+          return (
+            <ul className="event-list__single-event" key={event.id}>
+              <li className="event-list__column">{event.name}</li>
+              <li className="event-list__column">{event.date}</li>
+              <li className="event-list__column">{event.location}</li>
+            </ul>
+          );
         })}
       </ul>
     </section>

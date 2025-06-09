@@ -1,0 +1,15 @@
+.header {
+}
+
+.header__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.header__list-item {
+  width: 30%;
+  text-align: center;
+}
