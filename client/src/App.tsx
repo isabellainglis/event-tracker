@@ -1,9 +1,10 @@
 import "./App.css";
+import EventList from "./components/EventList/EventList";
 
 function App() {
   return (
     <>
-      <h1>Hello world</h1>
+      <EventList />
     </>
   );
 }
