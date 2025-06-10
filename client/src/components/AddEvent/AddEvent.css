@@ -1,0 +1,17 @@
+.add-event__modal {
+  margin: 1rem;
+}
+
+.add-event__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-event__input {
+  margin: 0.3rem;
+}
+
+.add-event__modal-btn {
+  width: 5rem;
+  align-self: center;
+}
