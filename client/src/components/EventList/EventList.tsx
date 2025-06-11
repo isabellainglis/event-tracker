@@ -1,6 +1,7 @@
 import ListHeader from "../ListHeader/ListHeader";
 import "./EventList.css";
 import { useQuery, gql } from "@apollo/client";
+import { Event } from "../../types/event";
 
 const GET_EVENTS = gql`
   query {
@@ -12,13 +13,6 @@ const GET_EVENTS = gql`
     }
   }
 `;
-
-interface Event {
-  id: number;
-  name: string;
-  date: string;
-  location: string;
-}
 
 export default function EventList() {
   const { data, error, loading } = useQuery(GET_EVENTS);

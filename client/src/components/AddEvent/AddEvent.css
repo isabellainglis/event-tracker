@@ -1,5 +1,12 @@
 .add-event__modal {
   margin: 1rem;
+  position: absolute;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(233, 229, 230, 0.961);
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .add-event__form {
@@ -9,6 +16,7 @@
 
 .add-event__input {
   margin: 0.3rem;
+  width: 100%;
 }
 
 .add-event__modal-btn {
